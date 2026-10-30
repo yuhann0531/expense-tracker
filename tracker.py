@@ -1,4 +1,4 @@
-# ... Installment 3: ...
+# ... Installment 4: ...
 print("=" * 40)
 print("\tEXPENSE TRACKER")
 print("\tTrack your expenses easily")
@@ -10,10 +10,28 @@ subtotal = 0
 
 item1 = input("Enter first expense item: ")
 amount1 = float(input("Enter first expense amount: "))
+if amount1 > 200:
+    print("  Huge expense - are you sure?")
+elif amount1 > 100:
+    print("  Big expense.")
+elif amount1 > 50:
+    print("  Moderate expense.")
+else:
+    print("  Small expense.")
 subtotal += amount1
 
 item2 = input("Enter second expense item: ")
 amount2 = float(input("Enter second expense amount: "))
+if amount2 > 200:
+    print("  Huge expense - are you sure?")
+elif amount2 > 100:
+    print("  Big expense.")
+elif amount2 > 50:
+    print("  Moderate expense.")
+else:
+    print("  Small expense.")
+if amount1 > 100 and amount2 > 100:
+    print("  Two big expenses in a row - slow down!")
 subtotal += amount2
 
 average = subtotal / 2
@@ -39,9 +57,13 @@ print(f"Subtotal:\t{subtotal}")
 print(f"Average:\t{average}")
 print(f"Tax ({tax_percent}%):\t{tax}")
 print(f"Grand total:\t{total}")
-print(f"Over budget?:\t{over_budget}")
-print(f"Left in budget:\t{left}")
+if over_budget:
+    print(f"Over budget by ${total - budget}!")
+elif total > budget * 0.9:
+    print(f"Careful: only ${left} left.")
+else:
+    print(f"Within budget. ${left} left.")
 print("-" * 40)
 
-print(f"Made by: \"Janrie Euhann Oasan\"\t|\tInstallment 3")
+print(f"Made by: Janrie Euhann Oasan  |  Installment 4")
 print("=" * 40)
